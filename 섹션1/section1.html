@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+//1. 세 수 중 최솟값
+            // function solution(a, b, c){
+            //   my ver
+            //   let answer = a;
+            //   if(answer > b) {
+            //     answer = b;
+            //   } else if(answer > c){
+            //     answer = c;
+            //   }
+
+            //   강사 ver
+            //   let answer;
+            //   if(a < b) asnwer = a;
+            //   else answer = b;
+            //   if(c < answer) answer = c;
+
+            //   return answer;
+            // }
+
+            // console.log(solution(6, 5, 11));
+
+
+//2. 삼각형 판별하기
+//가장 긴 변보다 나머지 두 변의 길이의 합이 커야 삼각형이 만들어진다.
+//세 길이를 모두 더한 총합의 괎과 가장 긴 길이의 값을 뺀 후 가장 긴 길이의 값이 더큰지 비교해서 
+//크다면 NO, 작다면 YES
+            // function solution(a, b, c){
+            //     let answer = "YES", maxNum;
+            //     let sum = a + b + c;
+            //     if(a > b) {
+            //       maxNum = a;
+            //     } else {
+            //       maxNum = b;
+            //     }
+            //     if(c > maxNum) {
+            //       maxNum = c;
+            //     }
+
+            //     if((sum - maxNum) < maxNum) {
+            //       answer = "NO";
+            //     }
+
+            //     return answer;
+            // }
+
+            // console.log(solution(13, 33, 17));
+
+
+//3. 연필 개수
+
+            // function solution(n){
+            //     let answer;
+            //     answer = Math.ceil(n / 12);
+            //     return answer;
+            // }
+
+            // console.log(solution(25));
+
+        </script>
+    </body>
+</html>
