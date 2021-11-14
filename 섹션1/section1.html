@@ -130,7 +130,7 @@
 
 //9. A를 #으로
 
-            function solution(s){
+            // function solution(s){
                 // 이 방법으로 왜 안되지?
                 // let answer = s;
                 // console.log(answer);
@@ -156,6 +156,55 @@
             
             // let str="BANANA";
             // console.log(solution(str));
+
+//10. 문자 찾기
+            // function solution(s, t){
+            //     let answer = 0;
+            //         for(let i = 0; i < s.length; i++) {
+            //             if(s[i] === t) {
+            //                 answer += 1;
+            //             }
+            //         }
+
+            //     return answer;
+            // }
+
+            // let str="COMPUTERPROGRAMMING";
+            // console.log(solution(str, 'R'));
+
+ //11. 대문자 찾기
+ //찾는 문자열과 문자열의 대문자랑 같을때 count += 1을 해주면 된다.
+
+            // function solution(s){         
+            //     let answer = 0;
+            //     for(let i of s) {
+            //         if(i === i.toUpperCase()){
+            //             answer += 1;
+            //         }
+            //     }
+            //     return answer;
+            // }
+
+            // let str="KoreaTimeGood";
+            // console.log(solution(str));
+
+//12. 대문자로 통일
+//toUpperCase, toLowerCase는 원본을 건들이지 않는다.
+            // function solution(s){         
+            //     let answer="";
+            //     for(let i of s) {
+            //         if(i === i.toLowerCase()){
+            //             answer += i.toUpperCase();
+            //         } else {
+            //             answer += i;
+            //         }    
+            //     }
+            //     return answer;
+
+            // }
+
+            // let str="ItisTimeToStudy";
+            // console.log(solution(str));     
   </script> 
 </body>
 </html>
