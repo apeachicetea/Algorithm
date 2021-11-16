@@ -1,68 +1,130 @@
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>출력결과</title>
-    </head>
-    <body>
-        <script>
-//1. 세 수 중 최솟값
-            // function solution(a, b, c){
-              //my ver
-              // let answer = a;
-              // if(answer > b) {
-              //   answer = b;
-              // } else if(answer > c){
-              //   answer = c;
-              // }
-
-              //강사 ver
-            //   let answer;
-            //   if(a < b) asnwer = a;
-            //   else answer = b;
-            //   if(c < answer) answer = c;
-
-            //   return answer;
-            // }
-
-            // console.log(solution(6, 5, 11));
-
-
-//2. 삼각형 판별하기
-//가장 긴 변보다 나머지 두 변의 길이의 합이 커야 삼각형이 만들어진다.
-//세 길이를 모두 더한 총합의 괎과 가장 긴 길이의 값을 뺀 후 가장 긴 길이의 값이 더큰지 비교해서 
-//크다면 NO, 작다면 YES
-            // function solution(a, b, c){
-            //     let answer = "YES", maxNum;
-            //     let sum = a + b + c;
-            //     if(a > b) {
-            //       maxNum = a;
-            //     } else {
-            //       maxNum = b;
-            //     }
-            //     if(c > maxNum) {
-            //       maxNum = c;
-            //     }
-
-            //     if((sum - maxNum) < maxNum) {
-            //       answer = "NO";
-            //     }
-
-            //     return answer;
-            // }
-
-            // console.log(solution(13, 33, 17));
-
-
-//3. 연필 개수
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>출력결과</title>
+</head>
+<body>
+  <script>
+//4. 1부터 N까지의 합
             // function solution(n){
-            //     let answer;
-            //     answer = Math.ceil(n / 12);
+            //     let answer = 0;
+            //     for(let i = 1; i <= n; i++) {
+            //       answer = answer + i;
+            //     }
             //     return answer;
             // }
 
-            // console.log(solution(25));
+            // console.log(solution(6));
 
-        </script>
-    </body>
+
+//5. 최솟값 구하기
+            // function solution(arr){         
+            //     let answer = arr[0];
+            //     for(let i = 1; i < arr.length; i++){
+            //       if(answer > arr[i]) {
+            //         answer = arr[i];
+            //       }
+            //     }
+            //     return answer;
+            // }
+
+            // let arr=[5, 7, 1, 3, 2, 9, 11];
+            // console.log(solution(arr));
+            
+            
+//6. 홀수
+            // function solution(arr){
+            //     let answer = [], min = Number.MAX_SAFE_INTEGER;
+            //     let sum = 0;
+            //     for(let el of arr) {
+            //       if(el % 2 === 1) {
+            //         sum += el;
+            //         if(el < min) {
+            //           min = el;
+            //         }
+            //       }
+            //     }
+
+            //     answer.push(sum);
+            //     answer.push(min);
+
+            //     return answer;
+            // }
+            
+            // arr=[12, 77, 38, 41, 53, 92, 85];
+            // console.log(solution(arr));
+
+//7. 10부제
+            function solution(day, arr){
+                let answer = 0;
+                for(let el of arr) {
+                  if(el % 10 === day) {
+                    answer += 1;
+                  }
+                }
+                
+                return answer;
+            }
+            
+            arr=[25, 23, 11, 47, 53, 17, 33];
+            console.log(solution(3, arr));
+
+            
+//8. 일곱난쟁이
+//주어진 입력값의 총합에 랜덤으로 뽑은 두 숫자의 합을 빼서 100이 나오는 조건을 만족한다면,
+//그 두 숫자가 정답이다.
+            function solution(arr){
+                let answer = arr;
+                let sum = arr.reduce(function(acc, cur){
+                  return acc + cur;
+                }, 0);
+
+                for(let i = 0; i < arr.length - 1; i++) {
+                  for(let j = i + 1; j < arr.length; j++) {
+                      if((sum - (arr[i] + arr[j])) === 100) {
+                        arr.splice(j, 1);
+                        arr.splice(i, 1);
+                      }
+                    }
+                  }
+                
+                return answer;
+            }
+            
+            let arr=[20, 7, 23, 19, 10, 15, 25, 8, 13];
+            console.log(solution(arr));
+
+
+//9. A를 #으로
+
+            function solution(s){
+                이 방법으로 왜 안되지?
+                let answer = s;
+                for(let i = 0; i < answer.length; i++){
+                  if(answer[i] === "A"){
+                    answer[i] = "#";
+                  }
+                }
+                return answer;
+
+
+                let answer = "";
+                for(let el of s) {
+                  if(el === "A") {
+                    answer += "#";
+                  } else { 
+                    answer += el;
+                  }  
+                }
+
+                return answer;
+            }
+            
+            let str="BANANA";
+            console.log(solution(str));
+  </script> 
+</body>
 </html>
