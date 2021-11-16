@@ -88,59 +88,48 @@
             // console.log(solution(arr));
 
 //7. 10부제
-            function solution(day, arr){
-                let answer = 0;
-                for(let el of arr) {
-                  if(el % 10 === day) {
-                    answer += 1;
-                  }
-                }
+            // function solution(day, arr){
+            //     let answer = 0;
+            //     for(let el of arr) {
+            //       if(el % 10 === day) {
+            //         answer += 1;
+            //       }
+            //     }
                 
-                return answer;
-            }
+            //     return answer;
+            // }
             
-            arr=[25, 23, 11, 47, 53, 17, 33];
-            console.log(solution(3, arr));
+            // arr=[25, 23, 11, 47, 53, 17, 33];
+            // console.log(solution(3, arr));
 
             
 //8. 일곱난쟁이
 //주어진 입력값의 총합에 랜덤으로 뽑은 두 숫자의 합을 빼서 100이 나오는 조건을 만족한다면,
 //그 두 숫자가 정답이다.
-            function solution(arr){
-                let answer = arr;
-                let sum = arr.reduce(function(acc, cur){
-                  return acc + cur;
-                }, 0);
+            // function solution(arr){
+            //     let answer = arr;
+            //     let sum = arr.reduce(function(acc, cur){
+            //       return acc + cur;
+            //     }, 0);
 
-                for(let i = 0; i < arr.length - 1; i++) {
-                  for(let j = i + 1; j < arr.length; j++) {
-                      if((sum - (arr[i] + arr[j])) === 100) {
-                        arr.splice(j, 1);
-                        arr.splice(i, 1);
-                      }
-                    }
-                  }
+            //     for(let i = 0; i < arr.length - 1; i++) {
+            //       for(let j = i + 1; j < arr.length; j++) {
+            //           if((sum - (arr[i] + arr[j])) === 100) {
+            //             arr.splice(j, 1);
+            //             arr.splice(i, 1);
+            //           }
+            //         }
+            //       }
                 
-                return answer;
-            }
+            //     return answer;
+            // }
             
-            let arr=[20, 7, 23, 19, 10, 15, 25, 8, 13];
-            console.log(solution(arr));
+            // let arr=[20, 7, 23, 19, 10, 15, 25, 8, 13];
+            // console.log(solution(arr));
 
 
 //9. A를 #으로
 
-<<<<<<< HEAD
-            function solution(s){
-                이 방법으로 왜 안되지?
-                let answer = s;
-                for(let i = 0; i < answer.length; i++){
-                  if(answer[i] === "A"){
-                    answer[i] = "#";
-                  }
-                }
-                return answer;
-=======
             // function solution(s){
                 // 이 방법으로 왜 안되지?
                 // let answer = s;
@@ -151,25 +140,20 @@
                 //   }
                 // }
                 // return answer;
->>>>>>> ff8fa91e39933f37963f372c5b7eaedfedfd4821
 
 
-                let answer = "";
-                for(let el of s) {
-                  if(el === "A") {
-                    answer += "#";
-                  } else { 
-                    answer += el;
-                  }  
-                }
+            //     let answer = "";
+            //     for(let el of s) {
+            //       if(el === "A") {
+            //         answer += "#";
+            //       } else { 
+            //         answer += el;
+            //       }  
+            //     }
 
-                return answer;
-            }
+            //     return answer;
+            // }
             
-<<<<<<< HEAD
-            let str="BANANA";
-            console.log(solution(str));
-=======
             // let str="BANANA";
             // console.log(solution(str));
 
@@ -220,8 +204,59 @@
             // }
 
             // let str="ItisTimeToStudy";
-            // console.log(solution(str));     
->>>>>>> ff8fa91e39933f37963f372c5b7eaedfedfd4821
+            // console.log(solution(str));  
+            
+            
+//13. 대소문자 변환
+            // function solution(s){  
+            //     let answer="";
+            //     for(let x of s) {
+            //       if(x === x.toUpperCase()) {
+            //         answer += x.toLowerCase();
+            //       } else if(x === x.toLowerCase())
+            //         answer += x.toUpperCase();
+            //       }
+            //     return answer;
+            // }
+
+            // console.log(solution("StuDY")); 
+
+
+//14. 가장 긴 문자열
+            // function solution(s){  
+            //     let answer = s[0];
+            // 내가 푼 방법
+            //     for(let el of s) {
+            //       if(el.length > answer.length) {
+            //         answer = el;
+            //       } 
+            //     }
+            // 다른방법
+            //       let answer, max = Number.MIN_SAFE_INTEGER;
+            //       for(let el of s) {
+            //         if(el.length > max) {
+            //           max = el.length;
+            //           answer = el;
+            //         }
+            //       }
+            //     return answer;
+            // }
+            // let str=["teacher", "time", "student", "beautiful", "good"];
+            // console.log(solution(str));
+
+
+//15. 가운데 문자 출력
+            // function solution(s){  
+            //     let answer, mid = Math.floor(s.length / 2);
+            //       if(s.length % 2 === 1) {
+            //         answer = s.slice(mid, mid + 1);
+            //       } else if(s.length % 2 === 0) {
+            //         answer = s.slice(mid - 1, mid + 1);
+            //       }
+                
+            //     return answer;
+            // }
+            // console.log(solution("study"));     
   </script> 
 </body>
 </html>
