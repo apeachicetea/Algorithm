@@ -276,18 +276,42 @@
             // console.log(solution("ksekkset"));
 
 //17. 중복단어제거
-            // function solution(s){  
-            //     let answer = [];
+            function solution(s){  
+                let answer;
             //     for(let i = 0; i < s.length; i++) {
             //       console.log(s[i], i, s.indexOf(s[i]));
             //       if(i === s.indexOf(s[i])) {
             //         answer.push(s[i]);
             //       }
             //     }
+            //arr.filter를 사용한 방법
+                  answer = s.filter((el, i)=>{
+                    console.log(el, i, s.indexOf(el));
+                    if(i === s.indexOf(el)) return true;
+                    //or
+                    // return i === s.indexOf(el) 
+                  })
+                return answer;
+            }
+            let str=["good", "time", "good", "time", "student"];
+            console.log(solution(str));
+
+//18. 문자열 속 문자 숫자세기
+//문자열 "k"가 있는 수만큼 세기 
+
+            // function solution(s){  
+            //     let answer = 0;
+            //     let pos = s.indexOf("k");
+
+            //     while(pos !== -1) {
+            //       answer++
+            //       pos = s.indexOf("k", pos + 1);
+            //     }
+                
             //     return answer;
             // }
-            // let str=["good", "time", "good", "time", "student"];
-            // console.log(solution(str));
+            // console.log(solution("ksekkset"));
+
   </script> 
 </body>
 </html>
