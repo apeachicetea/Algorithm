@@ -65,9 +65,30 @@
 
 //6. 격자판 최대합
             function solution(arr){  
-                let answer;
+                let answer = Number.MIN_SAFE_INTEGER;
+                let n = arr.length;
+                let row = col = 0;
+                let sum1 = sum2 = 0;
+                //각 행,열 중 최대값
+                for(let i = 0; i < n; i++){
+                    row = col = 0;
+                    for(let j =0; j < n; j++){
+                        row += arr[i][j];
+                        col += arr[j][i];
+                    }
+                    answer = Math.max(answer, row, col);
+                }
+                //대각선 합 구하기
+                for(let i = 0; i < n; i++){
+                    sum1 += arr[i][i];
+                    //왼쪽에서 오른쪽 대각선의 합
+                    sum2 += arr[i][n - i - 1];
+                    //오른쪽에서 왼쪽 대각선의 합 
+
+                }
+                    answer = Math.max(answer, sum1, sum2);
                 return answer;
-            }
+            }   
 
             let arr=[[10, 13, 10, 12, 15], 
                      [12, 39, 30, 23, 11],
