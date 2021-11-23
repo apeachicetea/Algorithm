@@ -46,22 +46,66 @@
             
 //3. 가위바위보
 
-            function solution(a, b){         
-                let answer = "";
-                for(let i = 0; i < a.length; i++) {
-                  if(a[i] === b[i]) answer += "D" + " ";
-                  else if(a[i] === 1 && b[i] === 3) answer += "A" + " ";
-                  else if(a[i] === 2 && b[i] === 1) answer += "A" + " ";
-                  else if(a[i] === 3 && b[i] === 2) answer += "A" + " ";
-                  else answer += "B" + " ";
-                }
+            // function solution(a, b){         
+            //     let answer = "";
+            //     for(let i = 0; i < a.length; i++) {
+            //       if(a[i] === b[i]) answer += "D" + " ";
+            //       else if(a[i] === 1 && b[i] === 3) answer += "A" + " ";
+            //       else if(a[i] === 2 && b[i] === 1) answer += "A" + " ";
+            //       else if(a[i] === 3 && b[i] === 2) answer += "A" + " ";
+            //       else answer += "B" + " ";
+            //     }
                 
-                return answer;
-            }
+            //     return answer;
+            // }
 
-            let a=[2, 3, 3, 1, 3];
-            let b=[1, 1, 2, 2, 3];
-            console.log(solution(a, b));
+            // let a=[2, 3, 3, 1, 3];
+            // let b=[1, 1, 2, 2, 3];
+            // console.log(solution(a, b));
+
+//4. 점수계산
+
+            // function solution(arr){         
+            //     let answer = 0;
+            //     let count = 0;
+            //     for(let i = 0; i < arr.length; i++) {
+            //         if(arr[i] === 0) {
+            //             count = 0;
+            //             answer += count;
+            //         } else if(arr[i] === 1) {
+            //             count++
+            //             answer += count;
+            //         }
+                //간결한 풀이
+            //     for(let el of arr) {
+            //         if(el === 1) {
+            //             count++
+            //             answer += count;
+            //         } else count = 0;
+            //     }
+                    
+            //     }
+            //     return answer;
+            // }
+
+            // let arr=[1, 0, 1, 1, 1, 0, 0, 1, 1, 0];
+            // console.log(solution(arr));
+            
+//5. 등수구하기
+            // function solution(arr){
+            //     let n = arr.length;
+            //     let answer = Array.from( {length: n}, ()=>1 );
+            //     for(let i = 0; i < n; i++) {
+            //         for(let j = 0; j < n; j++) {
+            //             if(arr[j] > arr[i]) answer[i]++;
+            //         }
+            //     }
+
+            //     return answer;
+            // }
+
+            // let arr=[87, 89, 92, 100, 76];
+            // console.log(solution(arr));            
         </script>
     </body>
 </html>
