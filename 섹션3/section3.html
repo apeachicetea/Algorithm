@@ -68,39 +68,58 @@
             // let str="g0en2T0s8eSoft";
             // console.log(solution(str));
 //4. 가장 짧은 문자거리
-            function solution(s, t){
-                let answer=[];
-                let p = 1000;
-                //문자열 왼 -> 오 방향
-                for(let x of s){
-                    if(x === t) {
-                        p=0;
-                        answer.push(p);
-                    }
-                    else{
-                        p++;
-                        answer.push(p);
-                    }
-                }
-                //p초기화
-                p = 1000;
+            // function solution(s, t){
+            //     let answer = [];
+            //     let p = 1000;
+            //     for(let x of s){
+            //         if(x === t){
+            //             p=0;
+            //             answer.push(p);
+            //         }
+            //         else {
+            //             p++;
+            //             answer.push(p);
+            //         }
+            //     }
 
-                //문자열 오 -> 왼 방향
-                for(let i = s.length -1; i >= 0; i--){
-                    if(s[i] === t){
-                        p=0;
-                        answer[i] = p;
-                    }
-                    else{
-                        p++;
-                        answer[i] = Math.min(answer[i], p);
+            //     p = 1000;
+
+            //     for(let i = s.length - 1; i >= 0; i--){
+            //         if(s[i] === t){
+            //             p=0;
+            //             answer[i] = p;
+            //         }
+            //         else {
+            //             p++;
+            //             answer[i] = Math.min(answer[i], p);
+            //         }
+            //     }
+                
+            //     return answer;
+            // }
+            
+            // let str="teachermode";
+            // console.log(solution(str, 'e')); 
+//5. 문자열 압축
+            function solution(s){
+                let answer = "";
+                let count = 1;
+                s = s + " ";
+                for(let i = 0; i < s.length - 1; i++){
+                    if(s[i] === s[i + 1]) count++;
+                    else {
+                        answer += s[i];
+                        if(count > 1){
+                            answer += count;
+                            count = 1;
+                        }
                     }
                 }
                 return answer;
             }
             
-            let str="teachermode";
-            console.log(solution(str, 'e'));                
+            let str="KKHSSSSSSSE";
+            console.log(solution(str));
         </script>
     </body>
 </html>
