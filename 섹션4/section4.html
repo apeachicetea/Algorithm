@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+//1.자리수의 합
+            // function solution(n, arr){
+            //     let answer, maxNum = Number.MIN_SAFE_INTEGER;
+                //풀이1
+                // for(let x of arr) {
+                //   let sum = 0, tmp = x;
+                //   while(tmp){
+                //     sum += (tmp % 10);
+                //     tmp = Math.floor(tmp / 10);
+                //   }
+                //   console.log(sum);
+                //   if(sum > maxNum) {
+                //     maxNum = sum;
+                //     answer = x;
+                //   }
+                //   else if(sum === maxNum) {
+                //     if(x > answer) answer = x;
+                //   }
+                // }
+                //풀이2
+            //     for(let x of arr) {
+            //       let sum = String(x).split("").reduce((a, b)=>{
+            //         return Number(a) + Number(b);
+            //       }, 0)
+            //       console.log(sum);
+            //       if(sum > maxNum) {
+            //         maxNum = sum;
+            //         answer = x;
+            //       }
+            //       else if(sum === maxNum) {
+            //         if(x > answer) answer = x;
+            //       }
+            //     }
+            //     return answer;
+            // }
+            
+            // let arr=[128, 460, 603, 40, 521, 137, 132];
+            // console.log(solution(7, arr));
+        </script>
+    </body>
+</html>
