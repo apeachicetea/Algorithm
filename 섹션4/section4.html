@@ -43,6 +43,41 @@
             
             // let arr=[128, 460, 603, 40, 521, 137, 132];
             // console.log(solution(7, arr));
+//2. 뒤집은 소수
+//소수(prime number): 1보다 큰 자연수 중 양의 약수가 1과 자기 자신 뿐인 수 (예) : 2, 3, 5, 7, 11, . . .
+//숫자 1은 소수가 아니다.
+//제곱근(square root) : 어떤 수의 제곱근은 제곱하여 그 수가 되는 수를 가리킨다. (예) : 16의 제곱근은 4, 25의 제곱근은 5, . . .
+//제곱근 구하기 : Math.sqrt();
+            function isPrime(num){
+                if(num === 1) return false;
+                for(let i = 2; i < parseInt(Math.sqrt(num)); i++){
+                    if(num % i === 0) return false;
+                }
+                return true;
+            }
+            function solution(arr){
+                let answer = [];
+                //풀이1
+                // for(let x of arr){
+                //     let result = 0;
+                //     while(x){
+                //         let t = x % 10;
+                //         result = result * 10 + t;
+                //         x = parseInt(x / 10);
+                //     }
+                //     if(isPrime(result)) answer.push(result);
+                // }
+                //풀이2
+                for(let x of arr){
+                    let result = Number(String(x).split("").reverse().join(""));
+                    if(isPrime(result)) answer.push(result);
+                }
+                
+                return answer;
+            }
+            
+            let arr=[32, 55, 62, 20, 250, 370, 200, 30, 100];
+            console.log(solution(arr));
         </script>
     </body>
 </html>
