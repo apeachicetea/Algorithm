@@ -132,28 +132,23 @@
 //3장의 카드를 뽑아야 하기 때문에 3중 반복문
 //set 자료구조는 중복된 데이터를 하나만 표시한다.
 
-            function solution(n, k, card){
-                let answer;
-                let set = new Set();
-                //set이라는 객체가 생성
-                for(let i = 0; i < n - 2; i++) {
-                    for(let j = i + 1; j < n - 1; j++) {
-                        for(let k = j + 1; k < n; k++) {
-                            set.add(card[i] + card[j] + card[k]);
-                            //set자료구조에 데이터 추가 매소드 add()
-                        }
-                    }
-                }
-                let newArr = Array.from(set).sort((a, b) => b - a);
-                //set객체를 from매서드로 배열로만들어주고, sort매서드로 내림차순으로 정렬해주었다.
-                console.log(set);
-                console.log(newArr);
-                answer = newArr[k - 1];
-                return answer;
-            }
+            // function solution(n, k, card){
+            //     let answer;
+            //     let set = new Set();
+            //     for(let i = 0; i < n - 2; i++) {
+            //         for(let j = i + 1; j < n - 1; j++) {
+            //             for(let k = j + 1; k < n; k++) {
+            //                 set.add(card[i] + card[j] + card[k]);
+            //             }
+            //         }
+            //     }
+            //     let newArr = Array.from(set).sort((a, b) => b - a);
+            //     answer = newArr[k - 1];
+            //     return answer;
+            // }
             
-            let arr=[13, 15, 34, 23, 45, 65, 33, 11, 26, 42];
-            console.log(solution(10, 3, arr));
+            // let arr=[13, 15, 34, 23, 45, 65, 33, 11, 26, 42];
+            // console.log(solution(10, 3, arr));
         </script>
     </body>
 </html>
