@@ -1,0 +1,159 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+//1.자리수의 합
+            // function solution(n, arr){
+            //     let answer, maxNum = Number.MIN_SAFE_INTEGER;
+                //풀이1
+                // for(let x of arr) {
+                //   let sum = 0, tmp = x;
+                //   while(tmp){
+                //     sum += (tmp % 10);
+                //     tmp = Math.floor(tmp / 10);
+                //   }
+                //   console.log(sum);
+                //   if(sum > maxNum) {
+                //     maxNum = sum;
+                //     answer = x;
+                //   }
+                //   else if(sum === maxNum) {
+                //     if(x > answer) answer = x;
+                //   }
+                // }
+                //풀이2
+            //     for(let x of arr) {
+            //       let sum = String(x).split("").reduce((a, b)=>{
+            //         return Number(a) + Number(b);
+            //       }, 0)
+            //       console.log(sum);
+            //       if(sum > maxNum) {
+            //         maxNum = sum;
+            //         answer = x;
+            //       }
+            //       else if(sum === maxNum) {
+            //         if(x > answer) answer = x;
+            //       }
+            //     }
+            //     return answer;
+            // }
+            
+            // let arr=[128, 460, 603, 40, 521, 137, 132];
+            // console.log(solution(7, arr));
+//2. 뒤집은 소수
+//소수(prime number): 1보다 큰 자연수 중 양의 약수가 1과 자기 자신 뿐인 수 (예) : 2, 3, 5, 7, 11, . . .
+//숫자 1은 소수가 아니다.
+//제곱근(square root) : 어떤 수의 제곱근은 제곱하여 그 수가 되는 수를 가리킨다. (예) : 16의 제곱근은 4, 25의 제곱근은 5, . . .
+//제곱근 구하기 : Math.sqrt();
+            // function isPrime(num){
+            //     if(num === 1) return false;
+            //     for(let i = 2; i < parseInt(Math.sqrt(num)); i++){
+            //         if(num % i === 0) return false;
+            //     }
+            //     return true;
+            // }
+            // function solution(arr){
+            //     let answer = [];
+                //풀이1
+                // for(let x of arr){
+                //     let result = 0;
+                //     while(x){
+                //         let t = x % 10;
+                //         result = result * 10 + t;
+                //         x = parseInt(x / 10);
+                //     }
+                //     if(isPrime(result)) answer.push(result);
+                // }
+                //풀이2
+                // for(let x of arr){
+                //     let result = Number(String(x).split("").reverse().join(""));
+                //     if(isPrime(result)) answer.push(result);
+                // }
+                
+            //     return answer;
+            // }
+            
+            // let arr=[32, 55, 62, 20, 250, 370, 200, 30, 100];
+            // console.log(solution(arr));
+//3.멘토링
+            // function solution(test){
+            //     let answer = 0;
+            //     m = test.length;
+            //     n = test[0].length;
+            //     for(let i = 1; i <= n; i++){
+            //         for(let j = 1; j <= n; j++){
+            //             let cnt = 0;
+            //             for(let k = 0; k < m; k++){
+            //                 let pi = pj = 0;
+            //                 for(let s = 0; s < n; s++){
+            //                     if(test[k][s] === i) pi = s;
+            //                     if(test[k][s] === j) pj = s;
+            //                 }
+            //                 if(pi < pj) cnt++;
+            //             }
+            //             if(cnt === m) answer++;
+            //         }
+            //     }
+            //     return answer;
+            // }
+            
+            // let arr=[[3, 4, 1, 2], [4, 3, 2, 1], [3, 1, 4, 2]];
+            // console.log(solution(arr));     
+//4.졸업선물
+// function solution(m, product){
+            //     let answer = 0;
+            //     let n = product.length;
+            //     product.sort((a, b)=>((a[0] + a[1]) - (b[0] + b[1])));
+            //     console.log(product);
+            //     for(let i = 0; i < n; i++){
+            //         let money = m - (product[i][0] / 2 + product[i][1])
+            //         let cnt = 1;
+            //         for(let j = 0; j < n; j++){
+            //             if(j !== i && (product[j][0] + product[j][1] > money)){
+            //                 break;
+            //             }
+            //             if(j !== i && (product[j][0] + product[j][1] <= money)){
+            //                 money -= (product[j][0] + product[j][1]);
+            //                 cnt++;
+            //             }
+            //         }
+            //         answer = Math.max(answer, cnt);
+            //     }
+                
+            //     return answer;
+            // }
+            
+            // let arr=[[6, 6], [2, 2], [4, 3], [4, 5], [10, 3]];
+            // console.log(solution(28, arr));  
+//5. K번째 큰수
+//3장의 카드를 뽑아야 하기 때문에 3중 반복문
+//set 자료구조는 중복된 데이터를 하나만 표시한다.
+
+            function solution(n, k, card){
+                let answer;
+                let set = new Set();
+                //set이라는 객체가 생성
+                for(let i = 0; i < n - 2; i++) {
+                    for(let j = i + 1; j < n - 1; j++) {
+                        for(let k = j + 1; k < n; k++) {
+                            set.add(card[i] + card[j] + card[k]);
+                            //set자료구조에 데이터 추가 매소드 add()
+                        }
+                    }
+                }
+                let newArr = Array.from(set).sort((a, b) => b - a);
+                //set객체를 from매서드로 배열로만들어주고, sort매서드로 내림차순으로 정렬해주었다.
+                console.log(set);
+                console.log(newArr);
+                answer = newArr[k - 1];
+                return answer;
+            }
+            
+            let arr=[13, 15, 34, 23, 45, 65, 33, 11, 26, 42];
+            console.log(solution(10, 3, arr));
+        </script>
+    </body>
+</html>
