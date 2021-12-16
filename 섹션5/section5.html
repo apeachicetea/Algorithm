@@ -79,21 +79,39 @@
             // let a=[1, 2, 1, 3, 1, 1, 1, 2];
             // console.log(solution(6, a));
 //4. 연속 부분수열2
-            function solution(m, arr){
-                let answer = sum = lt = 0;
-                for(let rt = 0; rt < arr.length; rt++) {
-                    sum += arr[rt];
-                    while(sum > m) {
-                        sum -= arr[lt++];
-                    }
-                    answer += (rt - lt + 1);
-                    //m이하의 연속 수열 갯수
+            // function solution(m, arr){
+            //     let answer = sum = lt = 0;
+            //     for(let rt = 0; rt < arr.length; rt++) {
+            //         sum += arr[rt];
+            //         while(sum > m) {
+            //             sum -= arr[lt++];
+            //         }
+            //         answer += (rt - lt + 1);
+            //         //m이하의 연속 수열 갯수
+            //     }
+            //     return answer;
+            // }
+            
+            // let a=[1, 3, 1, 2, 3];
+            // console.log(solution(5, a));
+//5. 최대 매출
+            function solution(k, arr){ 
+                let n = arr.length;
+                let answer = sum = 0;
+                for(let i = 0; i < k; i++) sum += arr[i];
+                //처음 3일의 합
+                answer = sum;
+
+                for(let i = k; i < n; i++) {
+                    sum += (arr[i] - arr[i - k]);
+                    answer = Math.max(answer, sum);
                 }
+                
                 return answer;
             }
             
-            let a=[1, 3, 1, 2, 3];
-            console.log(solution(5, a));
+            let a=[12, 15, 11, 20, 25, 10, 20, 19, 13, 15];
+            console.log(solution(3, a));
         </script>
     </body>
 </html>
