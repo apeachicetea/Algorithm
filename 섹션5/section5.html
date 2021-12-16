@@ -79,21 +79,76 @@
             // let a=[1, 2, 1, 3, 1, 1, 1, 2];
             // console.log(solution(6, a));
 //4. 연속 부분수열2
-            function solution(m, arr){
-                let answer = sum = lt = 0;
-                for(let rt = 0; rt < arr.length; rt++) {
-                    sum += arr[rt];
-                    while(sum > m) {
-                        sum -= arr[lt++];
-                    }
-                    answer += (rt - lt + 1);
-                    //m이하의 연속 수열 갯수
-                }
-                return answer;
-            }
+            // function solution(m, arr){
+            //     let answer = sum = lt = 0;
+            //     for(let rt = 0; rt < arr.length; rt++) {
+            //         sum += arr[rt];
+            //         while(sum > m) {
+            //             sum -= arr[lt++];
+            //         }
+            //         answer += (rt - lt + 1);
+            //         //m이하의 연속 수열 갯수
+            //     }
+            //     return answer;
+            // }
             
-            let a=[1, 3, 1, 2, 3];
-            console.log(solution(5, a));
+            // let a=[1, 3, 1, 2, 3];
+            // console.log(solution(5, a));
+//5. 최대 매출
+            // function solution(k, arr){ 
+            //     let n = arr.length;
+            //     let answer = sum = 0;
+            //     for(let i = 0; i < k; i++) {
+            //         sum += arr[i];
+            //     }
+            //     answer = sum;
+
+            //     for(let i = k; i < n; i++) {
+            //         sum += (arr[i] - arr[i - k]);
+            //         answer = Math.max(answer, sum);
+            //     }
+            //     return answer;
+            // }
+            
+            // let a=[12, 15, 11, 20, 25, 10, 20, 19, 13, 15];
+            // console.log(solution(3, a));
+//6. 학급 회장(해쉬)
+            // function solution(s){
+            //풀이1
+                // let answer;
+                // let obj = {};
+                // for(let i = 0; i < s.length; i++) {
+                //     if(obj[s[i]]) obj[s[i]]++;
+                //     else obj[s[i]] = 1;
+                // }
+
+                // let arr = [];
+                // for(let key in obj) {
+                //     arr.push([key, obj[key]]);
+                // }
+                
+                // arr.sort((a, b) => a[1] - b[1]);
+                // answer = arr[arr.length - 1][0];
+            //풀이2
+            //     let answer;
+            //     let sh = new Map();
+            //     for(let char of s) {
+            //         if(sh.has(char)) sh.set(char, sh.get(char) + 1);
+            //         else sh.set(char, 1);
+            //     }
+
+            //     let max = Number.MIN_SAFE_INTEGER;
+            //     for(let [key, val] of sh) {
+            //         if(val > max) {
+            //             max = val;
+            //             answer = key;
+            //         }
+            //     }    
+            //     return answer;
+            // }
+
+            // let str="BACBACCACCBDEDE";
+            // console.log(solution(str));           
         </script>
     </body>
 </html>
