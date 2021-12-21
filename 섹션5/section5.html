@@ -148,7 +148,57 @@
             // }
 
             // let str="BACBACCACCBDEDE";
-            // console.log(solution(str));           
+            // console.log(solution(str));
+//7.아나그램
+// function solution(str1, str2){
+//                 let answer = 'YES';
+//                 let cnt = 0;
+//                 let n = str1.length;
+//                 let newStr1 = str1.toLowerCase();
+//                 let newStr2 = str2.toLowerCase();
+//                 let sh1 = new Map();
+//                 let sh2 = new Map();
+
+                //풀이1
+                // for(let char of newStr1) {
+                //     if(sh1.has(char)) sh1.set(char, sh1.get(char) + 1);
+                //     else sh1.set(char, 1);
+                // }
+                // for(let char of newStr2) {
+                //     if(sh2.has(char)) sh2.set(char, sh2.get(char) + 1);
+                //     else sh2.set(char, 1);
+                // }
+
+                // for(let i = 0; i < n; i++) {
+                //     if(sh1.get(newStr1[i]) !== sh2.get(newStr1[i])) answer = 'NO';
+                // }
+
+                // return answer;
+
+                //풀이2
+            //     for(let x of str1) {
+            //         if(sh1.has(x)) sh1.set(x, sh1.get(x) + 1)
+            //         else sh1.set(x, 1);
+            //     }
+
+            //     for(let x of str2) {
+            //         if(!sh1.has(x) || sh1.get(x) === 0) return 'NO';
+            //         sh1.set(x, sh1.get(x) - 1);
+            //     }
+            // }
+            
+            // let a="AbaAeCe";
+            // let b="baeeACA";
+            // console.log(solution(a, b));
+//8. 모든 아나그램
+            function solution(s, t){
+                let answer;
+                return answer;
+            }
+            
+            let a="bacaAacba";
+            let b="abc";
+            console.log(solution(a, b));
         </script>
     </body>
 </html>
