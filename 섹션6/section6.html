@@ -6,7 +6,14 @@
     <body>
         <script>
             function solution(s){
-                let answer;
+                let answer = 'YES';
+                let stack = [];
+                for(let char of s) {
+                    if(char === '(') stack.push(char);
+                    if(char === ')') stack.pop(char);
+                }
+
+                if(stack.length) answer = 'NO';
                 return answer;
             }
             
