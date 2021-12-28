@@ -69,24 +69,46 @@
             // let b=[1, 5, 3, 5, 1, 2, 1, 4];
             // console.log(solution(a, b));
 //4. 후위식 연산
-            function solution(s){  
-                let answer;
+            // function solution(s){  
+            //     let answer;
+            //     let stack=[];
+            //     for(let char of s) {
+            //         if(!isNaN(char)) stack.push(Number(char));
+            //         else {
+            //             let rt = stack.pop();
+            //             let lt = stack.pop();
+            //             if(char === '+') stack.push(lt + rt);
+            //             if(char === '-') stack.push(lt - rt);
+            //             if(char === '*') stack.push(lt * rt);
+            //         }
+            //     }
+            //     answer = stack[0];
+            //     return answer;
+            // }
+            // let str="352+*9-";
+            // console.log(solution(str));
+//5. 쇠막대기
+            function solution(s){
+                let answer=0;
                 let stack=[];
-                for(let char of s) {
-                    if(!isNaN(char)) stack.push(Number(char));
-                    else {
-                        let rt = stack.pop();
-                        let lt = stack.pop();
-                        if(char === '+') stack.push(lt + rt);
-                        if(char === '-') stack.push(lt - rt);
-                        if(char === '*') stack.push(lt * rt);
+                for(let i = 0; i < s.length; i++) {
+                    if(s[i] === '(') stack.push(s[i]);
+                    if(s[i] === ')') {
+                        if(s[i - 1] === '(') {
+                            stack.pop();
+                            answer += stack.length;
+                        }
+                        else {
+                            stack.pop();
+                            answer += 1;
+                        }
                     }
                 }
-                answer = stack[0];
                 return answer;
             }
-            let str="352+*9-";
-            console.log(solution(str));
+            
+            let a="()(((()())(())()))(())";
+            console.log(solution(a));
         </script>
     </body>
 </html>
