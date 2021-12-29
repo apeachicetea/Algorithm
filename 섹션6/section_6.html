@@ -87,28 +87,46 @@
             // }
             // let str="352+*9-";
             // console.log(solution(str));
-//5. 쇠막대기
-            function solution(s){
-                let answer=0;
-                let stack=[];
-                for(let i = 0; i < s.length; i++) {
-                    if(s[i] === '(') stack.push(s[i]);
-                    if(s[i] === ')') {
-                        if(s[i - 1] === '(') {
-                            stack.pop();
-                            answer += stack.length;
-                        }
-                        else {
-                            stack.pop();
-                            answer += 1;
-                        }
+// //5. 쇠막대기
+//             function solution(s){
+//                 let answer=0;
+//                 let stack=[];
+//                 for(let i = 0; i < s.length; i++) {
+//                     if(s[i] === '(') stack.push(s[i]);
+//                     if(s[i] === ')') {
+//                         if(s[i - 1] === '(') {
+//                             stack.pop();
+//                             answer += stack.length;
+//                         }
+//                         else {
+//                             stack.pop();
+//                             answer += 1;
+//                         }
+//                     }
+//                 }
+//                 return answer;
+//             }
+            
+//             let a="()(((()())(())()))(())";
+//             console.log(solution(a));
+//6.공주 구하기
+// k-1만큼 반복문 돌면서 뒤로 다시 넣어주고
+// 맨앞에있는 숫자 없애기
+// 숫자 1개남을때까지 반복
+            function solution(n, k){
+                let answer;
+                let queue = Array.from({ length: n }, (v, i) => i + 1);
+                while(queue.length) {
+                    for(let i = 1; i < k; i++) {
+                        queue.push(queue.shift());
                     }
+                    queue.shift();
+                    if(queue.length === 1) answer = queue.shift();
                 }
                 return answer;
             }
-            
-            let a="()(((()())(())()))(())";
-            console.log(solution(a));
+
+            console.log(solution(8, 3));
         </script>
     </body>
 </html>
