@@ -12,20 +12,48 @@
   <script>
 // 1. 선택정렬
 // arr.sort를 사용하면 바로 되지만, 정렬하는 알고리즘을 구현하기 위해 아래와 같이 작성하는 것이다. 
+            // function solution(arr){
+            //     let answer = arr;
+            //     for(let i = 0; i < arr.length; i++) {
+            //       let idx = i;
+            //       for(let j = i + 1; j < arr.length; j++) {
+            //         if(arr[i] < arr[idx]) idx = j;
+            //       }
+            //       [arr[i], arr[idx]] = [arr[idx], arr[i]];
+            //     }
+            //     return answer;
+            // }
+
+            // let arr=[13, 5, 11, 7, 23, 15];
+            // console.log(solution(arr));
+// 2. 버블정렬
+            // function solution(arr){
+            //     let answer=arr;
+            //     for(let i = 0; i < arr.length - 1; i++) {
+            //       for(let j = 0; j < arr.length - i - 1; j++) {
+            //         if(arr[j] > arr[j + 1]) [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+            //         console.log(arr);
+            //       }
+            //     }
+            //     return answer;
+            // }
+
+            // let arr=[13, 5, 11, 7, 23, 15];
+            // console.log(solution(arr));
+// 3. 스페셜 소트
             function solution(arr){
-                let answer = arr;
-                for(let i = 0; i < arr.length; i++) {
-                  let idx = i;
-                  for(let j = i + 1; j < arr.length; j++) {
-                    if(arr[i] < arr[idx]) idx = j;
+                let answer=arr;
+                for(let i = 0; i < arr.length - 1; i++) {
+                  for(let j = 0; j < arr.length - i - 1; j++) {
+                    if(arr[j] > 0 && arr[j + 1] < 0) [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                    console.log(arr);                    
                   }
-                  [arr[i], arr[idx]] = [arr[idx], arr[i]];
                 }
                 return answer;
             }
 
-            let arr=[13, 5, 11, 7, 23, 15];
-            console.log(solution(arr));    
+            let arr=[1, 2, 3, -3, -2, 5, 6, -6];
+            console.log(solution(arr));            
   </script>
 </body>
 </html>
