@@ -41,19 +41,37 @@
             // let arr=[13, 5, 11, 7, 23, 15];
             // console.log(solution(arr));
 // 3. 스페셜 소트
+            // function solution(arr){
+            //     let answer=arr;
+            //     for(let i = 0; i < arr.length - 1; i++) {
+            //       for(let j = 0; j < arr.length - i - 1; j++) {
+            //         if(arr[j] > 0 && arr[j + 1] < 0) [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+            //         console.log(arr);                    
+            //       }
+            //     }
+            //     return answer;
+            // }
+
+            // let arr=[1, 2, 3, -3, -2, 5, 6, -6];
+            // console.log(solution(arr));            
+// 4. 삽입정렬            
             function solution(arr){
                 let answer=arr;
-                for(let i = 0; i < arr.length - 1; i++) {
-                  for(let j = 0; j < arr.length - i - 1; j++) {
-                    if(arr[j] > 0 && arr[j + 1] < 0) [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
-                    console.log(arr);                    
+                let j;
+                for(let i = 0; i < arr.length; i++) {
+                  let tmp = arr[i];
+                  for(j = i - 1; j >= 0; j--) {
+                    if(arr[j] > tmp) arr[j + 1] = arr[j];
+                    else break;
                   }
+                  // console.log(j);
+                  arr[j + 1] = tmp;
                 }
                 return answer;
             }
 
-            let arr=[1, 2, 3, -3, -2, 5, 6, -6];
-            console.log(solution(arr));            
+            let arr=[11, 7, 5, 6, 10, 9];
+            console.log(solution(arr));
   </script>
 </body>
 </html>
