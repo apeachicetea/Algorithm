@@ -55,23 +55,54 @@
             // let arr=[1, 2, 3, -3, -2, 5, 6, -6];
             // console.log(solution(arr));            
 // 4. 삽입정렬            
-            function solution(arr){
-                let answer=arr;
-                let j;
-                for(let i = 0; i < arr.length; i++) {
-                  let tmp = arr[i];
-                  for(j = i - 1; j >= 0; j--) {
-                    if(arr[j] > tmp) arr[j + 1] = arr[j];
-                    else break;
+            // function solution(arr){
+            //     let answer=arr;
+            //     let j;
+            //     for(let i = 0; i < arr.length; i++) {
+            //       let tmp = arr[i];
+            //       for(j = i - 1; j >= 0; j--) {
+            //         if(arr[j] > tmp) arr[j + 1] = arr[j];
+            //         else break;
+            //       }
+            //       arr[j + 1] = tmp;
+            //     }
+            //     return answer;
+            // }
+            // let arr=[11, 7, 5, 6, 10, 9];
+            // console.log(solution(arr));
+// 5. LRU
+            function solution(size, arr){
+                //캐시
+                let answer = Array.from({length: size}, () => 0);
+                //작업순서대로 작업하면서 캐시에 같은 값이 있는지 없는지 확인
+                //없으면 Cache Miss
+                //있면 Cache Hit
+                arr.forEach(el => {
+                  let pos = -1;
+                  for(let i = 0; i < size; i++) if(el === answer[i]) pos = i;
+                  
+                  //Cache Miss일때 캐쉬의 모든 요소들을 뒤로 한칸씩 땡겨주고
+                  //0인덱스 자리에 해당하는 작업을 넣어준다
+                  if(pos === -1) {
+                    for(let i = size - 1; i >= 1; i--){
+                      answer[i] = answer[i - 1];
+                    }
                   }
-                  // console.log(j);
-                  arr[j + 1] = tmp;
-                }
+                  //Cache Hit일때 일치하는 인덱스 캐쉬자리에서부터
+                  //한칸씩 뒤로 땡겨준다
+                  //0인덱스 자리에 해당하는 작업을 넣어준다
+                  else {
+                    for(let i = pos; i >= 1; i--){
+                      answer[i] = answer[i - 1];
+                    }
+                  }
+                  answer[0] = el;
+                })
                 return answer;
             }
 
-            let arr=[11, 7, 5, 6, 10, 9];
-            console.log(solution(arr));
+            let arr=[1, 2, 3, 2, 6, 2, 3, 5, 7];
+            console.log(solution(5, arr));
   </script>
 </body>
 </html>
