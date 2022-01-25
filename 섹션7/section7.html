@@ -1,108 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1. 선택정렬
+      // arr.sort를 사용하면 바로 되지만, 정렬하는 알고리즘을 구현하기 위해 아래와 같이 작성하는 것이다.
+      // function solution(arr){
+      //     let answer = arr;
+      //     for(let i = 0; i < arr.length; i++) {
+      //       let idx = i;
+      //       for(let j = i + 1; j < arr.length; j++) {
+      //         if(arr[i] < arr[idx]) idx = j;
+      //       }
+      //       [arr[i], arr[idx]] = [arr[idx], arr[i]];
+      //     }
+      //     return answer;
+      // }
 
-  <script>
-// 1. 선택정렬
-// arr.sort를 사용하면 바로 되지만, 정렬하는 알고리즘을 구현하기 위해 아래와 같이 작성하는 것이다. 
-            // function solution(arr){
-            //     let answer = arr;
-            //     for(let i = 0; i < arr.length; i++) {
-            //       let idx = i;
-            //       for(let j = i + 1; j < arr.length; j++) {
-            //         if(arr[i] < arr[idx]) idx = j;
-            //       }
-            //       [arr[i], arr[idx]] = [arr[idx], arr[i]];
-            //     }
-            //     return answer;
-            // }
+      // let arr=[13, 5, 11, 7, 23, 15];
+      // console.log(solution(arr));
+      // 2. 버블정렬
+      // function solution(arr){
+      //     let answer=arr;
+      //     for(let i = 0; i < arr.length - 1; i++) {
+      //       for(let j = 0; j < arr.length - i - 1; j++) {
+      //         if(arr[j] > arr[j + 1]) [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+      //         console.log(arr);
+      //       }
+      //     }
+      //     return answer;
+      // }
 
-            // let arr=[13, 5, 11, 7, 23, 15];
-            // console.log(solution(arr));
-// 2. 버블정렬
-            // function solution(arr){
-            //     let answer=arr;
-            //     for(let i = 0; i < arr.length - 1; i++) {
-            //       for(let j = 0; j < arr.length - i - 1; j++) {
-            //         if(arr[j] > arr[j + 1]) [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
-            //         console.log(arr);
-            //       }
-            //     }
-            //     return answer;
-            // }
+      // let arr=[13, 5, 11, 7, 23, 15];
+      // console.log(solution(arr));
+      // 3. 스페셜 소트
+      // function solution(arr){
+      //     let answer=arr;
+      //     for(let i = 0; i < arr.length - 1; i++) {
+      //       for(let j = 0; j < arr.length - i - 1; j++) {
+      //         if(arr[j] > 0 && arr[j + 1] < 0) [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+      //         console.log(arr);
+      //       }
+      //     }
+      //     return answer;
+      // }
 
-            // let arr=[13, 5, 11, 7, 23, 15];
-            // console.log(solution(arr));
-// 3. 스페셜 소트
-            // function solution(arr){
-            //     let answer=arr;
-            //     for(let i = 0; i < arr.length - 1; i++) {
-            //       for(let j = 0; j < arr.length - i - 1; j++) {
-            //         if(arr[j] > 0 && arr[j + 1] < 0) [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
-            //         console.log(arr);                    
-            //       }
-            //     }
-            //     return answer;
-            // }
+      // let arr=[1, 2, 3, -3, -2, 5, 6, -6];
+      // console.log(solution(arr));
+      // 4. 삽입정렬
+      // function solution(arr){
+      //     let answer=arr;
+      //     let j;
+      //     for(let i = 0; i < arr.length; i++) {
+      //       let tmp = arr[i];
+      //       for(j = i - 1; j >= 0; j--) {
+      //         if(arr[j] > tmp) arr[j + 1] = arr[j];
+      //         else break;
+      //       }
+      //       arr[j + 1] = tmp;
+      //     }
+      //     return answer;
+      // }
+      // let arr=[11, 7, 5, 6, 10, 9];
+      // console.log(solution(arr));
+      // 5. LRU
+      // function solution(size, arr){
+      //                 //캐시
+      //                 let answer = Array.from({length: size}, () => 0);
+      //                 //작업순서대로 작업하면서 캐시에 같은 값이 있는지 없는지 확인
+      //                 //없으면 Cache Miss
+      //                 //있면 Cache Hit
+      //                 arr.forEach(el => {
+      //                   let pos = -1;
+      //                   for(let i = 0; i < size; i++) if(el === answer[i]) pos = i;
 
-            // let arr=[1, 2, 3, -3, -2, 5, 6, -6];
-            // console.log(solution(arr));            
-// 4. 삽입정렬            
-            // function solution(arr){
-            //     let answer=arr;
-            //     let j;
-            //     for(let i = 0; i < arr.length; i++) {
-            //       let tmp = arr[i];
-            //       for(j = i - 1; j >= 0; j--) {
-            //         if(arr[j] > tmp) arr[j + 1] = arr[j];
-            //         else break;
-            //       }
-            //       arr[j + 1] = tmp;
-            //     }
-            //     return answer;
-            // }
-            // let arr=[11, 7, 5, 6, 10, 9];
-            // console.log(solution(arr));
-// 5. LRU
-            function solution(size, arr){
-                //캐시
-                let answer = Array.from({length: size}, () => 0);
-                //작업순서대로 작업하면서 캐시에 같은 값이 있는지 없는지 확인
-                //없으면 Cache Miss
-                //있면 Cache Hit
-                arr.forEach(el => {
-                  let pos = -1;
-                  for(let i = 0; i < size; i++) if(el === answer[i]) pos = i;
-                  
-                  //Cache Miss일때 캐쉬의 모든 요소들을 뒤로 한칸씩 땡겨주고
-                  //0인덱스 자리에 해당하는 작업을 넣어준다
-                  if(pos === -1) {
-                    for(let i = size - 1; i >= 1; i--){
-                      answer[i] = answer[i - 1];
-                    }
-                  }
-                  //Cache Hit일때 일치하는 인덱스 캐쉬자리에서부터
-                  //한칸씩 뒤로 땡겨준다
-                  //0인덱스 자리에 해당하는 작업을 넣어준다
-                  else {
-                    for(let i = pos; i >= 1; i--){
-                      answer[i] = answer[i - 1];
-                    }
-                  }
-                  answer[0] = el;
-                })
-                return answer;
-            }
+      //                   //Cache Miss일때 캐쉬의 모든 요소들을 뒤로 한칸씩 땡겨주고
+      //                   //0인덱스 자리에 해당하는 작업을 넣어준다
+      //                   if(pos === -1) {
+      //                     for(let i = size - 1; i >= 1; i--){
+      //                       answer[i] = answer[i - 1];
+      //                     }
+      //                   }
+      //                   //Cache Hit일때 일치하는 인덱스 캐쉬자리에서부터
+      //                   //한칸씩 뒤로 땡겨준다
+      //                   //0인덱스 자리에 해당하는 작업을 넣어준다
+      //                   else {
+      //                     for(let i = pos; i >= 1; i--){
+      //                       answer[i] = answer[i - 1];
+      //                     }
+      //                   }
+      //                   answer[0] = el;
+      //                 })
+      //                 return answer;
+      //             }
 
-            let arr=[1, 2, 3, 2, 6, 2, 3, 5, 7];
-            console.log(solution(5, arr));
-  </script>
-</body>
+      //             let arr=[1, 2, 3, 2, 6, 2, 3, 5, 7];
+      //             console.log(solution(5, arr));
+      // 6. 장난꾸러기 현수
+      function solution(arr) {
+        let answer = [];
+        let idx;
+        let sortedArr = [...arr];
+        sortedArr.sort((a, b) => a - b);
+        console.log(arr);
+        console.log(sortedArr);
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] !== sortedArr[i]) {
+            idx = i + 1;
+            answer.push(idx);
+            console.log(idx, i);
+          }
+        }
+        return answer;
+      }
+
+      let arr = [120, 125, 152, 130, 135, 135, 143, 127, 160];
+      console.log(solution(arr));
+    </script>
+  </body>
 </html>
